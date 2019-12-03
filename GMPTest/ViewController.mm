@@ -31,8 +31,11 @@
     __gmpz_init_set_str(mod_b, "78", 10);
     __gmpz_init_set_str(mod_c, "20", 10);
     __gmpz_mod(mod_a, mod_b, mod_c);
-    
+    char * pt = NULL;
+   pt = __gmpz_get_str(pt, 10, z_s);
     gmp_printf("%Zd\n", mod_a);
+    NSString * lStr = [[NSString alloc] initWithUTF8String:pt];
+    NSLog(@"======= %@" ,lStr);
 }
 
 
